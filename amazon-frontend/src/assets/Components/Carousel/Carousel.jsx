@@ -9,7 +9,7 @@ const CarouselEffect = () => {
       <Carousel
         autoPlay={true}
         infiniteLoop={true}
-        showIndicators={true}
+        showIndicators={false}
         showThumbs={false} // hide small previews
         showArrows={true} // left/right arrows
         showStatus={false} // hide "1/5" status text
