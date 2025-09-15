@@ -1,9 +1,11 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import { SlLocationPin } from "react-icons/sl";
 import { FaSearch } from "react-icons/fa";
 import { BiCart } from "react-icons/bi";
 import classes from "./Header.module.css";
 import LowerHeader from "./LowerHeader";
+
 const Header = () => {
   return (
     <>
@@ -11,12 +13,12 @@ const Header = () => {
         <div className={classes.header__container}>
           <div className={classes.logo__container}>
             {/* logo */}
-            <a href="">
+            <Link to="/">
               <img
                 src="https://pngimg.com/uploads/amazon/small/amazon_PNG11.png"
                 alt="amazon log"
               />
-            </a>
+            </Link>
             <div className={classes.delivery}>
               {/* delivery */}
               <span>
@@ -48,23 +50,23 @@ const Header = () => {
               </section>
             </div>
             {/* three components */}
-            <a href="">
+            <Link to="/auth">
               <div>
                 <p>Sign In</p>
                 <span>Account & Lists</span>
               </div>
-            </a>
+            </Link>
             {/* orders */}
-            <a href="">
+            <Link to="/orders">
               <p>returns</p>
               <span>& Orders</span>
-            </a>
+            </Link>
             {/* cart */}
 
-            <a to={"/cart"} className={classes.cart}>
+            <Link to="/cart" className={classes.cart}>
               <BiCart size={28} />
               <span>0</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
