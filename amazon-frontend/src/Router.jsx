@@ -6,6 +6,7 @@ import Payment from './assets/pages/Payment/Payment'
 import Orders from './assets/pages/Orders/Orders'
 import Cart from './assets/pages/Cart/Cart'
 import Results from './assets/pages/Results/Results'
+import ProductDetail from './assets/pages/ProductDetail/ProductDetail'
 
 
 export default function Routing() {
@@ -17,6 +18,7 @@ export default function Routing() {
         <Route path="/payments" element={<Payment />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/category/:categoryName" element={<Results />} />
+        <Route path="/products/:productId" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
