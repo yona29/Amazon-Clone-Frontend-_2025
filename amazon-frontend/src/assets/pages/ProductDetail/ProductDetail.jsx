@@ -38,7 +38,8 @@ axios.get(`${productUrl}/products/${productId}`)
       <Layout>
         {isLoading ? <Loader /> : <ProductCard product={product} 
         flex={true} 
-        renderDesc={true}/>}
+        renderDesc={true}
+        renderAdd={true}/>}
       </Layout>
     );
 }

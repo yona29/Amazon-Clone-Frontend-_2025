@@ -1,5 +1,5 @@
 .card__container{
-    max-width: 250px;
+    width: 250px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 10px;
     color: black;
@@ -9,6 +9,7 @@
 .card__container:hover .button{
     display: block;
 }
+
 .card__container img {
     padding: 10px;
     width: 100%;
