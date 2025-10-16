@@ -26,6 +26,10 @@ const Auth = () => {
 
   const authHandler = async (e) => {
     e.preventDefault();
+    if (!email || !password) {
+      setError("Please enter a valid email and password.");
+      return;
+    }
     console.log(e.target.name);
     if (e.target.name == "signin") {
       // firebase auth
@@ -114,7 +118,7 @@ const Auth = () => {
             />
           </div>
           <button
-            type="submit"
+            type="button"
             onClick={authHandler}
             name="signin"
             className={classes.login_signInButton}
@@ -134,7 +138,7 @@ const Auth = () => {
         </p>
         {/* create */}
         <button
-          type="submit"
+          type="button"
           onClick={authHandler}
           name="signup"
           className={classes.login__registerButton}
