@@ -26,12 +26,7 @@ const Auth = () => {
 
   const authHandler = async (e) => {
     e.preventDefault();
-    if (!email || !password) {
-      setError("Please enter a valid email and password.");
-      return;
-    }
-    console.log(e.target.name);
-    if (e.target.name == "signin") {
+    if (e.currentTarget.name == "signin") {
       // firebase auth
       setLoading({ ...loading, signIn: true });
       signInWithEmailAndPassword(auth, email, password)
@@ -56,7 +51,7 @@ const Auth = () => {
             user: userInfo.user,
           });
           setLoading({ ...loading, signUP: false });
-          navigate("/");
+          navigate(navStateData?.state?.redirect || " /");
         })
         .catch((err) => {
           setError(err.message);
@@ -118,7 +113,7 @@ const Auth = () => {
             />
           </div>
           <button
-            type="button"
+            type="submit"
             onClick={authHandler}
             name="signin"
             className={classes.login_signInButton}
@@ -138,12 +133,12 @@ const Auth = () => {
         </p>
         {/* create */}
         <button
-          type="button"
+          type="submit"
           onClick={authHandler}
           name="signup"
           className={classes.login__registerButton}
         >
-          {" "}
+      
           {loading.signUP ? (
             <ClipLoader color="#000" size={15}></ClipLoader>
           ) : (
@@ -159,3 +154,12 @@ const Auth = () => {
 };
 
 export default Auth;
+
+
+
+
+
+
+
+
+
